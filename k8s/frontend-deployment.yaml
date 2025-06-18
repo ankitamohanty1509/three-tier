@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  namespace: my-app
 spec:
   replicas: 1
   selector:
@@ -14,6 +15,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: your-frontend-image:tag
+        image: <your-frontend-image>
         ports:
         - containerPort: 80
