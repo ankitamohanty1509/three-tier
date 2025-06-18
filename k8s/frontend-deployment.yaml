@@ -2,9 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: three-tier
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -15,6 +14,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 381492221394.dkr.ecr.us-east-1.amazonaws.com/three-tier-frontend
+        image: your-frontend-image:tag
         ports:
-        - containerPort: 3000
+        - containerPort: 80
