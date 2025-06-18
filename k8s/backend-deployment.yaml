@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
+  namespace: my-app
 spec:
   replicas: 1
   selector:
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: your-backend-image:tag
+        image: <your-backend-image>
         ports:
         - containerPort: 5000
         envFrom:
