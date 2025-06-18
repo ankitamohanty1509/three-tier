@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: backend-config
+  namespace: my-app
 data:
   DB_HOST: database-1.cluster-cxweucgu48p2.us-east-1.rds.amazonaws.com
   DB_USER: admin
