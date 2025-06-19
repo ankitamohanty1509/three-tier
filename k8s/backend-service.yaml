@@ -7,4 +7,5 @@ spec:
     app: backend
   ports:
     - port: 5000
-  clusterIP: None
+      targetPort: 5000
+  clusterIP: ClusterIP
