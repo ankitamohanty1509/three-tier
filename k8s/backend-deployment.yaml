@@ -2,9 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: three-tier
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -14,10 +13,16 @@ spec:
         app: backend
     spec:
       containers:
-      - name: backend
-        image: 381492221394.dkr.ecr.us-east-1.amazonaws.com/three-tier-backend
-        ports:
-        - containerPort: 5000
-        envFrom:
-        - secretRef:
-            name: rds-secret
+        - name: backend
+          image: <your-dockerhub>/userapp-backend
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DB_HOST
+              value: your-rds-endpoint.rds.amazonaws.com
+            - name: DB_USER
+              value: admin
+            - name: DB_PASS
+              value: YourSecurePassword
+            - name: DB_NAME
+              value: userdb
