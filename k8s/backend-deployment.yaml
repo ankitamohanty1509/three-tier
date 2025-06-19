@@ -19,10 +19,10 @@ spec:
             - containerPort: 5000
           env:
             - name: DB_HOST
-              value: your-rds-endpoint.rds.amazonaws.com
+              value: three-tier-db.cd48uaq4c2vd.us-east-1.rds.amazonaws.com
             - name: DB_USER
               value: admin
             - name: DB_PASS
-              value: YourSecurePassword
+              value: Ank150402ita
             - name: DB_NAME
-              value: userdb
+              value: three-tier-db
